@@ -44,4 +44,22 @@ public class UserServiceImpl implements UserService {
 	public Optional<User> forgetPassword(String email) {
 		return userRepository.findByEmailAddress(email);
 	}
+	
+	 @Override
+	    public Optional<User> loginUsers(String email, String password) {
+	        Optional<User> existingUser = userRepository.findByEmailAddress(email);
+
+	        if (existingUser.isPresent()) {
+	            User user = existingUser.get();
+
+	            // Compare raw password with encrypted one
+	            if (passwordEncoder.matches(password, user.getPassword())) {
+	                return Optional.of(user);
+	            } else {
+	                throw new RuntimeException("Invalid password!");
+	            }
+	        } else {
+	            throw new RuntimeException("User not found!");
+	        }
+	    }
 }

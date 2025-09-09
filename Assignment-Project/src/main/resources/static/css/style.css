@@ -1,4 +1,6 @@
-/* Reset and global styles */
+/* ============================= */
+/* RESET & GLOBAL STYLES */
+/* ============================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,55 +8,88 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body background - Centering the content */
 body {
     background-color: #f5f8fc;
     height: 100vh;
-    /* This makes the body a flex container */
     display: flex;
-    /* Centers children horizontally */
     justify-content: center;
-    /* Centers children vertically */
     align-items: center;
 }
 
-/* Main card */
+/* ============================= */
+/* AUTH CARD */
+/* ============================= */
 .auth-card {
-    max-width: 750px;
-    width: 100%;
-    /* This removes the rounded corners */
+    width: 850px; /* Increased width for better alignment */
+    max-width: 95%;
     border-radius: 0;
     overflow: hidden;
+    background-color: #fff;
     box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Left side background */
-.left-side {
+/* ============================= */
+/* LEFT PANEL */
+/* ============================= */
+.left-side,
+.auth-left-panel {
     background: linear-gradient(135deg, #00e0aa, #00c8ff);
-    min-height: 350px;
 }
 
 .left-side img {
-    max-width: 200px;
+    max-width: 180px;
+    filter: brightness(0) invert(1);
 }
 
-/* Right side form */
-.right-side {
+.auth-left-panel {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 0;
+}
+
+/* ============================= */
+/* RIGHT PANEL */
+/* ============================= */
+.right-side,
+.auth-right-panel {
     background-color: #fff;
-    min-height: 350px;
 }
 
-/* Logo */
+.auth-right-panel {
+    flex: 1.3; /* Make right panel slightly bigger */
+    padding: 3rem;
+    border-radius: 0;
+}
+
+/* ============================= */
+/* LOGO & HEADING */
+/* ============================= */
 .logo {
     width: 130px;
 }
 
-/* Headings */
+.auth-logo-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-logo-text .logo {
+    height: 30px;
+}
+
+.auth-logo-text .logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
 h4 {
     color: #333;
 }
 
-/* Form controls */
+/* ============================= */
+/* FORM INPUTS */
+/* ============================= */
 .form-control {
     border-radius: 8px;
     padding: 10px 15px;
@@ -63,12 +98,18 @@ h4 {
     transition: all 0.3s ease-in-out;
 }
 
+.auth-right-panel .form-control {
+    padding: 12px 15px;
+}
+
 .form-control:focus {
     border-color: #00c8ff;
     box-shadow: 0 0 6px rgba(0, 200, 255, 0.4);
 }
 
-/* Checkbox */
+/* ============================= */
+/* CHECKBOX */
+/* ============================= */
 .form-check-input {
     border-radius: 4px;
     border: 2px solid #00c8ff;
@@ -83,33 +124,48 @@ h4 {
     white-space: nowrap;
 }
 
-/* Adjustments for the alert messages */
-.alert {
-    /* Reduced top and bottom padding for a tighter fit */
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Sign-up button */
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+.btn-auth,
 .btn-signup {
     background-color: #00c8ff;
     border-color: #00c8ff;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 16px;
     font-weight: 500;
-    box-shadow: 0px 6px 18px rgba(0, 200, 255, 0.4);
     transition: all 0.3s ease;
 }
 
-.btn-signup:hover {
+/* Login Button */
+.btn-auth {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    box-shadow: 0px 6px 18px rgba(0, 200, 255, 0.4);
+}
+
+.btn-auth:hover {
     background-color: #009ed1;
     border-color: #009ed1;
     transform: scale(1.05);
 }
 
-/* Links */
+/* Signup Button */
+.btn-signup {
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 14px;
+    box-shadow: 0px 4px 12px rgba(0, 200, 255, 0.3);
+}
+
+.btn-signup:hover {
+    background-color: #009ed1;
+    border-color: #009ed1;
+    transform: scale(1.04);
+}
+
+/* ============================= */
+/* LINKS */
+/* ============================= */
 .link-primary {
     color: #00c8ff;
     font-weight: 500;
@@ -122,9 +178,67 @@ h4 {
     text-decoration: underline;
 }
 
-/* Responsive */
+/* ============================= */
+/* REMEMBER & FORGOT + CREATE ACCOUNT */
+/* ============================= */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.create-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* ============================= */
+/* RESPONSIVE STYLES */
+/* ============================= */
 @media (max-width: 768px) {
-    .left-side, .right-side {
-        min-height: auto;
+    .auth-card {
+        flex-direction: column;
+        width: 95%;
     }
+
+    .auth-left-panel {
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    .auth-right-panel {
+        padding: 2rem;
+    }
+
+    .lock-image {
+        width: 150px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .create-account {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* ============================= */
+/* LOGIN-SPECIFIC ELEMENTS */
+/* ============================= */
+.lock-image {
+    width: 200px;
+}
+
+.auth-main {
+    height: 100vh;
 }

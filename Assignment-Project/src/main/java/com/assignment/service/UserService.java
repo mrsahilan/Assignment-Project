@@ -9,4 +9,6 @@ public interface UserService
 	User registerUsers(User user, String confirmPassword);
 	
 	Optional<User> forgetPassword(String email);
+	
+	Optional<User> loginUsers(String email, String password);
 }
