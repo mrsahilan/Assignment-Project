@@ -1,0 +1,130 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body background - Centering the content */
+body {
+    background-color: #f5f8fc;
+    height: 100vh;
+    /* This makes the body a flex container */
+    display: flex;
+    /* Centers children horizontally */
+    justify-content: center;
+    /* Centers children vertically */
+    align-items: center;
+}
+
+/* Main card */
+.auth-card {
+    max-width: 750px;
+    width: 100%;
+    /* This removes the rounded corners */
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Left side background */
+.left-side {
+    background: linear-gradient(135deg, #00e0aa, #00c8ff);
+    min-height: 350px;
+}
+
+.left-side img {
+    max-width: 200px;
+}
+
+/* Right side form */
+.right-side {
+    background-color: #fff;
+    min-height: 350px;
+}
+
+/* Logo */
+.logo {
+    width: 130px;
+}
+
+/* Headings */
+h4 {
+    color: #333;
+}
+
+/* Form controls */
+.form-control {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #00c8ff;
+    box-shadow: 0 0 6px rgba(0, 200, 255, 0.4);
+}
+
+/* Checkbox */
+.form-check-input {
+    border-radius: 4px;
+    border: 2px solid #00c8ff;
+}
+
+.form-check-input:checked {
+    background-color: #00c8ff;
+    border-color: #00c8ff;
+}
+
+.form-check-label {
+    white-space: nowrap;
+}
+
+/* Adjustments for the alert messages */
+.alert {
+    /* Reduced top and bottom padding for a tighter fit */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Sign-up button */
+.btn-signup {
+    background-color: #00c8ff;
+    border-color: #00c8ff;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0px 6px 18px rgba(0, 200, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-signup:hover {
+    background-color: #009ed1;
+    border-color: #009ed1;
+    transform: scale(1.05);
+}
+
+/* Links */
+.link-primary {
+    color: #00c8ff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.link-primary:hover {
+    color: #009ed1;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .left-side, .right-side {
+        min-height: auto;
+    }
+}
