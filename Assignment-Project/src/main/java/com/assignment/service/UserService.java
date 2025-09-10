@@ -11,4 +11,6 @@ public interface UserService
 	Optional<User> forgetPassword(String email);
 	
 	Optional<User> loginUsers(String email, String password);
+	
+	Optional<User> updatePassword(String email, String newPassword);
 }
