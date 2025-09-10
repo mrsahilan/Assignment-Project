@@ -89,4 +89,10 @@ public class UserController {
         model.addAttribute("user", loggedInUser);
         return "dashboard"; // Loads dashboard.html
     }
+    
+    // SHOW RESET PASSWORD PAGE
+    @GetMapping("/reset-password")
+    public String showResetPasswordPage() {
+        return "reset-password";
+    }
 }
